@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Slotify Care — AI Receptionist for India's Doctors & Clinics</title>
+<meta name="description" content="Slotify Care is an AI receptionist for doctors and clinics across India. Answers every patient call 24/7 in Hindi and English, books appointments, syncs your calendar and sends WhatsApp confirmations."/>
+<meta name="keywords" content="AI receptionist India, clinic receptionist AI, doctor appointment booking, AI for doctors, dental clinic AI, medical clinic software India, patient call management, WhatsApp appointment booking, Hindi English AI receptionist, Slotify Care"/>
+<meta name="robots" content="index, follow"/>
+<meta name="author" content="Slotify Care"/>
+<link rel="canonical" href="https://slotifycare.com/"/>
+<meta property="og:title" content="Slotify Care — AI Receptionist for India's Doctors"/>
+<meta property="og:description" content="Never miss a patient call again. Priya, your AI receptionist, answers every call 24/7 in Hindi and English."/>
+<meta property="og:url" content="https://slotifycare.com/"/>
+<meta property="og:type" content="website"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="google-site-verification" content="8wpT4si_S-13PIU6SBrf6Z_Y8JZIzqQAPIPJ4c74G6c"/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"Slotify Care","url":"https://slotifycare.com","description":"AI receptionist for India's doctors and clinics.","email":"slotifycare@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Mumbai","addressRegion":"Maharashtra","addressCountry":"IN"},"sameAs":["https://www.instagram.com/slotifycare/","https://www.linkedin.com/company/slotifycare"]}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --navy:#0C1E3C;--blue:#0369A1;--mid:#0EA5E9;--pale:#E0F2FE;
+  --white:#fff;--body:#334155;--muted:#64748B;--border:#E2E8F0;
+  --green:#059669;--amber:#D97706;--red:#DC2626;
+}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;color:var(--navy);background:#fff;overflow-x:hidden;}
+img{max-width:100%;}
+a{text-decoration:none;color:inherit;}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar{width:4px;}
+::-webkit-scrollbar-thumb{background:var(--mid);}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  height:68px;padding:0 5%;
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(255,255,255,.97);backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+  transition:box-shadow .3s;
+}
+nav.scrolled{box-shadow:0 2px 20px rgba(12,30,60,.08);}
+.n-logo{display:flex;align-items:center;gap:10px;}
+.n-logo-icon{width:36px;height:36px;border-radius:9px;background:var(--blue);display:flex;align-items:center;justify-content:center;}
+.n-logo-name{font-size:1.1rem;font-weight:700;color:var(--navy);}
+.n-links{display:flex;align-items:center;gap:28px;}
+.n-links a{font-size:.82rem;font-weight:500;color:var(--muted);transition:color .2s;}
+.n-links a:hover{color:var(--blue);}
+.n-cta{
+  padding:9px 22px;background:#DC2626;color:#fff;
+  border-radius:6px;font-size:.82rem;font-weight:700;
+  border:none;
+  animation:pulse-btn 2s ease-in-out infinite;
+}
+.n-cta:hover{background:#b91c1c;color:#fff;}
+@keyframes pulse-btn{
+  0%{box-shadow:0 0 0 0 rgba(220,38,38,.6);}
+  70%{box-shadow:0 0 0 12px rgba(220,38,38,0);}
+  100%{box-shadow:0 0 0 0 rgba(220,38,38,0);}
+}
+  70%{box-shadow:0 0 0 10px rgba(220,38,38,0);}
+  100%{box-shadow:0 0 0 0 rgba(220,38,38,0);}
+}
+@media(max-width:768px){.n-links a:not(.n-cta){display:none;}}
+
+/* ── HERO ── */
+.hero{
+  min-height:100vh;padding:100px 5% 80px;
+  background:linear-gradient(160deg,#0C1E3C 0%,#0369A1 60%,#0EA5E9 100%);
+  display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;
+  position:relative;overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background-image:radial-gradient(rgba(255,255,255,.05) 1px,transparent 1px);
+  background-size:32px 32px;pointer-events:none;
+}
+.hero-left{position:relative;z-index:1;}
+.h-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);
+  border-radius:20px;padding:5px 14px;margin-bottom:24px;
+}
+.h-eyebrow-dot{width:6px;height:6px;border-radius:50%;background:#4ADE80;animation:blink 2s infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:.2;}}
+.h-eyebrow span{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.8);}
+.hero h1{font-size:clamp(2.4rem,4.5vw,4rem);font-weight:800;line-height:1.1;color:#fff;margin-bottom:20px;letter-spacing:-.02em;}
+.hero h1 em{font-style:normal;color:#7DD3FC;}
+.hero-p{font-size:1.05rem;color:rgba(255,255,255,.7);line-height:1.8;max-width:480px;margin-bottom:36px;}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:48px;}
+.btn-primary{padding:14px 32px;background:#fff;color:var(--navy);border-radius:7px;font-size:.9rem;font-weight:700;transition:all .2s;border:2px solid #fff;}
+.btn-primary:hover{background:transparent;color:#fff;}
+.btn-outline{padding:14px 28px;background:transparent;color:#fff;border:2px solid rgba(255,255,255,.4);border-radius:7px;font-size:.9rem;font-weight:600;transition:all .2s;}
+.btn-outline:hover{border-color:#fff;}
+.hero-stats{display:flex;gap:32px;flex-wrap:wrap;}
+.h-stat-v{font-size:2rem;font-weight:800;color:#fff;line-height:1;}
+.h-stat-l{font-size:.75rem;color:rgba(255,255,255,.55);margin-top:3px;}
+
+/* hero right — phone */
+.hero-right{position:relative;z-index:1;display:flex;justify-content:center;}
+.ph-scene{position:relative;width:300px;}
+.ph-frame{
+  width:280px;background:#0F2942;border-radius:36px;
+  border:2px solid rgba(255,255,255,.15);
+  box-shadow:0 40px 80px rgba(0,0,0,.4);overflow:hidden;
+}
+.ph-notch{height:28px;background:#0F2942;display:flex;align-items:center;justify-content:center;}
+.ph-pill{width:70px;height:5px;background:rgba(255,255,255,.08);border-radius:3px;}
+.ph-hdr{display:flex;align-items:center;gap:9px;padding:10px 14px 11px;border-bottom:1px solid rgba(255,255,255,.06);}
+.ph-av{width:30px;height:30px;border-radius:50%;background:var(--blue);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff;flex-shrink:0;}
+.ph-nm{font-size:.78rem;font-weight:700;color:#fff;}
+.ph-st{font-size:.68rem;color:rgba(255,255,255,.4);}
+.ph-live{margin-left:auto;font-size:.6rem;font-weight:700;background:rgba(34,197,94,.15);border:1px solid rgba(34,197,94,.3);color:#4ADE80;padding:2px 8px;border-radius:10px;display:flex;align-items:center;gap:3px;}
+.ph-live::before{content:'';width:4px;height:4px;border-radius:50%;background:#4ADE80;animation:blink 1.5s infinite;}
+.ph-body{padding:12px 10px;display:flex;flex-direction:column;gap:7px;min-height:240px;}
+.bbl{padding:8px 11px;font-size:.73rem;line-height:1.5;border-radius:12px;max-width:88%;opacity:0;transform:translateY(6px);transition:opacity .4s ease,transform .4s ease;}
+.bbl.show{opacity:1;transform:translateY(0);}
+.bbl-ai{align-self:flex-start;background:rgba(255,255,255,.08);color:rgba(255,255,255,.88);border-radius:3px 12px 12px 12px;}
+.bbl-sndr{font-size:.65rem;font-weight:700;color:var(--mid);margin-bottom:2px;}
+.bbl-u{align-self:flex-end;background:var(--blue);color:#fff;border-radius:12px 3px 12px 12px;}
+.bbl-ok{align-self:stretch;max-width:100%;background:rgba(13,148,136,.2);border:1px solid rgba(13,148,136,.3);color:#5EEAD4;border-radius:10px;font-size:.68rem;}
+.ftag{
+  position:absolute;background:#fff;color:var(--navy);font-size:.72rem;font-weight:700;
+  padding:7px 13px;border-radius:24px;box-shadow:0 8px 24px rgba(0,0,0,.2);white-space:nowrap;
+  animation:float 4s ease-in-out infinite;
+}
+.ft1{top:-10px;right:-20px;animation-delay:0s;}
+.ft2{bottom:80px;left:-30px;animation-delay:2s;}
+@keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-7px);}}
+
+/* ── TICKER ── */
+.ticker{background:var(--navy);padding:14px 0;overflow:hidden;white-space:nowrap;}
+.ticker-track{display:inline-flex;animation:tick 28s linear infinite;}
+@keyframes tick{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+.t-item{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;font-weight:500;color:rgba(255,255,255,.5);padding:0 32px;}
+.t-item::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--mid);}
+
+/* ── SECTIONS ── */
+.sec{padding:80px 5%;}
+.sec-inner{max-width:1100px;margin:0 auto;}
+.sec-tag{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin-bottom:12px;}
+.sec-h{font-size:clamp(1.8rem,3vw,2.6rem);font-weight:800;line-height:1.15;letter-spacing:-.02em;margin-bottom:16px;}
+.sec-h em{font-style:normal;color:var(--blue);}
+.sec-sub{font-size:1rem;color:var(--muted);line-height:1.75;max-width:560px;}
+
+/* ── PROBLEM SECTION ── */
+.problem-sec{background:#F8FAFC;}
+.problem-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-top:48px;}
+.prob-cards{display:flex;flex-direction:column;gap:16px;}
+.prob-card{
+  background:#fff;border-radius:12px;padding:20px 22px;
+  border-left:4px solid var(--red);
+  box-shadow:0 2px 12px rgba(0,0,0,.06);
+}
+.prob-card-n{font-size:2.2rem;font-weight:800;color:var(--red);line-height:1;margin-bottom:4px;}
+.prob-card-t{font-size:.95rem;font-weight:600;color:var(--navy);margin-bottom:4px;}
+.prob-card-d{font-size:.85rem;color:var(--muted);line-height:1.6;}
+.prob-visual{background:var(--navy);border-radius:16px;padding:28px;color:#fff;}
+.prob-vis-h{font-size:1rem;font-weight:700;margin-bottom:20px;color:rgba(255,255,255,.9);}
+.prob-bar-row{margin-bottom:14px;}
+.prob-bar-label{display:flex;justify-content:space-between;font-size:.78rem;margin-bottom:5px;}
+.prob-bar-label span:first-child{color:rgba(255,255,255,.6);}
+.prob-bar-label span:last-child{font-weight:700;color:#fff;}
+.prob-bar-bg{height:8px;background:rgba(255,255,255,.08);border-radius:4px;overflow:hidden;}
+.prob-bar-fill{height:100%;border-radius:4px;transition:width 1.5s ease;}
+
+/* ── HOW IT WORKS ── */
+.how-sec{background:#fff;}
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:48px;}
+.step-card{text-align:center;padding:28px 20px;}
+.step-num{
+  width:52px;height:52px;border-radius:50%;
+  background:var(--pale);border:2px solid var(--mid);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.2rem;font-weight:800;color:var(--blue);
+  margin:0 auto 16px;
+}
+.step-icon{font-size:1.6rem;margin-bottom:10px;}
+.step-t{font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:8px;}
+.step-d{font-size:.85rem;color:var(--muted);line-height:1.6;}
+.step-arrow{display:flex;align-items:center;justify-content:center;padding-top:26px;color:var(--border);font-size:1.5rem;}
+
+/* ── FEATURES ── */
+.feat-sec{background:#F8FAFC;}
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px;}
+.feat-card{
+  background:#fff;border-radius:14px;padding:28px 24px;
+  border:1px solid var(--border);
+  transition:transform .2s,box-shadow .2s;
+}
+.feat-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(3,105,161,.1);}
+.feat-icon{
+  width:48px;height:48px;border-radius:12px;
+  background:var(--pale);display:flex;align-items:center;justify-content:center;
+  font-size:1.3rem;margin-bottom:16px;
+}
+.feat-t{font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:8px;}
+.feat-d{font-size:.87rem;color:var(--muted);line-height:1.7;}
+
+
+
+/* ── ROI CALCULATOR ── */
+.roi-sec{background:linear-gradient(135deg,var(--navy) 0%,#0369A1 100%);}
+.roi-inner{max-width:800px;margin:0 auto;text-align:center;}
+.roi-inner .sec-h{color:#fff;}
+.roi-inner .sec-sub{color:rgba(255,255,255,.6);margin:0 auto 48px;}
+.roi-card{background:#fff;border-radius:16px;padding:40px;text-align:left;}
+.roi-sliders{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-bottom:32px;}
+.roi-label{font-size:.82rem;font-weight:600;color:var(--navy);margin-bottom:8px;display:flex;justify-content:space-between;}
+.roi-label span{color:var(--blue);font-weight:700;}
+input[type=range]{width:100%;-webkit-appearance:none;height:6px;border-radius:3px;background:var(--pale);outline:none;}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;border-radius:50%;background:var(--blue);cursor:pointer;border:3px solid #fff;box-shadow:0 2px 8px rgba(3,105,161,.3);}
+.roi-results{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.roi-result{text-align:center;background:#F8FAFC;border-radius:10px;padding:16px;}
+.roi-result-n{font-size:1.6rem;font-weight:800;color:var(--navy);}
+.roi-result-n.highlight{color:var(--green);}
+.roi-result-l{font-size:.75rem;color:var(--muted);margin-top:4px;}
+
+/* ── SPECIALTIES ── */
+.spec-sec{background:#F8FAFC;}
+.spec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px;}
+.spec-card{
+  background:#fff;border-radius:12px;padding:22px 20px;
+  border:1px solid var(--border);display:flex;align-items:center;gap:14px;
+  transition:border-color .2s,box-shadow .2s;
+}
+.spec-card:hover{border-color:var(--mid);box-shadow:0 4px 16px rgba(3,105,161,.08);}
+.spec-emoji{font-size:1.6rem;}
+.spec-name{font-size:.95rem;font-weight:600;color:var(--navy);}
+.spec-desc{font-size:.8rem;color:var(--muted);margin-top:2px;}
+
+/* ── FAQ ── */
+.faq-sec{background:#fff;}
+.faq-list{max-width:740px;margin:48px auto 0;}
+.faq-item{border-bottom:1px solid var(--border);overflow:hidden;}
+.faq-q{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:20px 0;cursor:pointer;gap:16px;
+}
+.faq-q-text{font-size:.97rem;font-weight:600;color:var(--navy);}
+.faq-icon{width:24px;height:24px;border-radius:50%;background:var(--pale);border:1px solid var(--mid);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:.9rem;color:var(--blue);transition:transform .3s;}
+.faq-item.open .faq-icon{transform:rotate(45deg);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .35s;}
+.faq-item.open .faq-a{max-height:200px;padding-bottom:18px;}
+.faq-a p{font-size:.9rem;color:var(--muted);line-height:1.75;}
+
+/* ── CTA ── */
+.cta-sec{
+  background:var(--navy);padding:80px 5%;text-align:center;
+  position:relative;overflow:hidden;
+}
+.cta-sec::before{
+  content:'';position:absolute;inset:0;
+  background-image:radial-gradient(rgba(255,255,255,.04) 1px,transparent 1px);
+  background-size:32px 32px;
+}
+.cta-inner{position:relative;z-index:1;max-width:620px;margin:0 auto;}
+.cta-h{font-size:clamp(1.8rem,3vw,2.6rem);font-weight:800;color:#fff;margin-bottom:16px;letter-spacing:-.02em;}
+.cta-h em{font-style:normal;color:#7DD3FC;}
+.cta-p{font-size:1rem;color:rgba(255,255,255,.6);line-height:1.75;margin-bottom:36px;}
+.cta-form{display:flex;gap:0;max-width:480px;margin:0 auto 16px;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.15);}
+.cta-inp{flex:1;padding:15px 18px;background:rgba(255,255,255,.07);border:none;outline:none;font-family:inherit;font-size:.9rem;color:#fff;}
+.cta-inp::placeholder{color:rgba(255,255,255,.3);}
+.cta-btn{padding:15px 28px;background:var(--mid);color:#fff;border:none;font-family:inherit;font-size:.88rem;font-weight:700;cursor:pointer;transition:background .2s;white-space:nowrap;}
+.cta-btn:hover{background:#0284c7;}
+.cta-note{font-size:.78rem;color:rgba(255,255,255,.3);}
+.cta-success{display:none;background:rgba(13,148,136,.15);border:1px solid rgba(13,148,136,.3);border-radius:8px;padding:14px 20px;color:#5EEAD4;font-size:.9rem;max-width:480px;margin:0 auto;}
+
+/* ── FOOTER ── */
+footer{background:#060F1E;padding:48px 5% 28px;}
+.foot-inner{max-width:1100px;margin:0 auto;}
+.foot-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px;}
+.foot-brand-name{font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:8px;display:flex;align-items:center;gap:8px;}
+.foot-brand-desc{font-size:.83rem;color:rgba(255,255,255,.35);line-height:1.7;max-width:260px;margin-bottom:16px;}
+.foot-social{display:flex;gap:10px;}
+.foot-soc-link{width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,.07);display:flex;align-items:center;justify-content:center;transition:background .2s;}
+.foot-soc-link:hover{background:var(--blue);}
+.foot-soc-link svg{width:15px;height:15px;fill:rgba(255,255,255,.5);}
+.foot-col-h{font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:16px;}
+.foot-col a{display:block;font-size:.85rem;color:rgba(255,255,255,.45);margin-bottom:10px;transition:color .2s;}
+.foot-col a:hover{color:#fff;}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.07);padding-top:24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.foot-copy{font-size:.78rem;color:rgba(255,255,255,.25);}
+.foot-bottom-links{display:flex;gap:20px;}
+.foot-bottom-links a{font-size:.78rem;color:rgba(255,255,255,.25);transition:color .2s;}
+.foot-bottom-links a:hover{color:rgba(255,255,255,.6);}
+
+/* ── WHATSAPP FLOAT ── */
+.wa-float{
+  position:fixed;bottom:28px;right:28px;z-index:50;
+  width:56px;height:56px;border-radius:50%;
+  background:#25D366;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 20px rgba(37,211,102,.4);
+  transition:transform .2s,box-shadow .2s;
+}
+.wa-float:hover{transform:scale(1.1);box-shadow:0 8px 28px rgba(37,211,102,.5);}
+.wa-float svg{width:28px;height:28px;fill:#fff;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;padding:100px 5% 60px;}
+  .hero-right{display:none;}
+  .problem-grid{grid-template-columns:1fr;}
+  .steps-grid{grid-template-columns:1fr 1fr;}
+  .feat-grid{grid-template-columns:1fr 1fr;}
+  .case-grid{grid-template-columns:1fr;}
+  .roi-sliders{grid-template-columns:1fr;}
+  .roi-results{grid-template-columns:1fr 1fr;}
+  .spec-grid{grid-template-columns:1fr 1fr;}
+  .foot-top{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:600px){
+  .steps-grid{grid-template-columns:1fr;}
+  .feat-grid{grid-template-columns:1fr;}
+  .spec-grid{grid-template-columns:1fr;}
+  .roi-results{grid-template-columns:1fr;}
+  .cta-form{flex-direction:column;border-radius:8px;}
+  .cta-btn{border-radius:0 0 8px 8px;}
+  .foot-top{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a class="n-logo" href="#">
+    <div class="n-logo-icon">
+      <svg width="22" height="22" viewBox="0 0 40 40" fill="none">
+        <rect x="4" y="19" width="2.6" height="7" rx="1.3" fill="white" fill-opacity=".5"/>
+        <rect x="7.5" y="16" width="2.6" height="13" rx="1.3" fill="white" fill-opacity=".65"/>
+        <rect x="11" y="12" width="2.6" height="21" rx="1.3" fill="white" fill-opacity=".8"/>
+        <rect x="14.5" y="9" width="2.6" height="27" rx="1.3" fill="white" fill-opacity=".95"/>
+        <rect x="18" y="7" width="2.6" height="31" rx="1.3" fill="white"/>
+        <rect x="21.5" y="9" width="2.6" height="27" rx="1.3" fill="white" fill-opacity=".95"/>
+        <rect x="25" y="12" width="2.6" height="21" rx="1.3" fill="white" fill-opacity=".8"/>
+        <circle cx="33" cy="31" r="7.5" fill="#0EA5E9"/>
+        <text x="33" y="34.5" text-anchor="middle" font-family="Arial" font-size="6.5" font-weight="bold" fill="white">AI</text>
+      </svg>
+    </div>
+    <span class="n-logo-name">Slotify Care</span>
+  </a>
+  <div class="n-links">
+    <a href="#problem">The Problem</a>
+    <a href="#how">How It Works</a>
+    <a href="#features">Features</a>
+    
+    <a href="#faq">FAQ</a>
+    <a href="#cta" class="n-cta">Request Demo</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="h-eyebrow">
+      <div class="h-eyebrow-dot"></div>
+      <span>AI Voice Agent for India's Clinics &middot; 2025</span>
+    </div>
+    <h1>Your clinic<br/><em>never sleeps.</em></h1>
+    <p class="hero-p">Slotify Care is an AI receptionist that answers every patient call — booking appointments in Hindi or English, syncing your calendar, and sending WhatsApp confirmations. 24 hours a day.</p>
+    <div class="hero-btns">
+      <a href="#cta" class="btn-primary">Request a Free Demo</a>
+      <a href="#how" class="btn-outline">See How It Works</a>
+    </div>
+    <div class="hero-stats">
+      <div><div class="h-stat-v">0%</div><div class="h-stat-l">Missed Calls</div></div>
+      <div><div class="h-stat-v">&lt;60s</div><div class="h-stat-l">To Confirm</div></div>
+      <div><div class="h-stat-v">24/7</div><div class="h-stat-l">Always On</div></div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="ph-scene">
+      <div class="ftag ft1">&#10003; Appointment Confirmed</div>
+      <div class="ftag ft2">&#8635; Calendar Synced</div>
+      <div class="ph-frame">
+        <div class="ph-notch"><div class="ph-pill"></div></div>
+        <div class="ph-hdr">
+          <div class="ph-av">SC</div>
+          <div><div class="ph-nm">Smile Care Clinic</div><div class="ph-st">Priya AI &middot; 24/7</div></div>
+          <div class="ph-live">LIVE</div>
+        </div>
+        <div class="ph-body" id="ph-body"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-track">
+    <span class="t-item">Zero Missed Calls</span><span class="t-item">Hindi + English</span>
+    <span class="t-item">Google Calendar Sync</span><span class="t-item">WhatsApp Confirmed</span>
+    <span class="t-item">24/7 Availability</span><span class="t-item">Auto Reminders</span>
+    <span class="t-item">No App Required</span><span class="t-item">Works on Any Number</span>
+    <span class="t-item">Zero Missed Calls</span><span class="t-item">Hindi + English</span>
+    <span class="t-item">Google Calendar Sync</span><span class="t-item">WhatsApp Confirmed</span>
+    <span class="t-item">24/7 Availability</span><span class="t-item">Auto Reminders</span>
+    <span class="t-item">No App Required</span><span class="t-item">Works on Any Number</span>
+  </div>
+</div>
+
+<!-- PROBLEM -->
+<section class="sec problem-sec" id="problem">
+  <div class="sec-inner">
+    <div class="sec-tag">The Problem</div>
+    <h2 class="sec-h">India's clinics lose patients<br/><em>every single day.</em></h2>
+    <p class="sec-sub">Most clinics in India still rely on a single receptionist answering calls manually. The result is predictable — and costly.</p>
+    <div class="problem-grid">
+      <div class="prob-cards">
+        <div class="prob-card">
+          <div class="prob-card-n">3–5</div>
+          <div class="prob-card-t">Patients lost per day to missed calls</div>
+          <div class="prob-card-d">Every unanswered call is a patient who calls the next clinic on Google and books there instead.</div>
+        </div>
+        <div class="prob-card">
+          <div class="prob-card-n">&#8377;1L+</div>
+          <div class="prob-card-t">Monthly revenue lost per clinic</div>
+          <div class="prob-card-d">At an average appointment value of &#8377;800–1,500, missed calls silently cost clinics lakhs every year.</div>
+        </div>
+        <div class="prob-card">
+          <div class="prob-card-n">67%</div>
+          <div class="prob-card-t">Patients don't call back</div>
+          <div class="prob-card-d">When a clinic doesn't answer, two-thirds of patients move on permanently. They never call back.</div>
+        </div>
+      </div>
+      <div class="prob-visual">
+        <div class="prob-vis-h">When do calls get missed?</div>
+        <div class="prob-bar-row">
+          <div class="prob-bar-label"><span>During procedures</span><span>42%</span></div>
+          <div class="prob-bar-bg"><div class="prob-bar-fill" style="width:42%;background:#EF4444;"></div></div>
+        </div>
+        <div class="prob-bar-row">
+          <div class="prob-bar-label"><span>After clinic hours</span><span>31%</span></div>
+          <div class="prob-bar-bg"><div class="prob-bar-fill" style="width:31%;background:#F97316;"></div></div>
+        </div>
+        <div class="prob-bar-row">
+          <div class="prob-bar-label"><span>Lunch break</span><span>15%</span></div>
+          <div class="prob-bar-bg"><div class="prob-bar-fill" style="width:15%;background:#EAB308;"></div></div>
+        </div>
+        <div class="prob-bar-row">
+          <div class="prob-bar-label"><span>Weekends &amp; holidays</span><span>12%</span></div>
+          <div class="prob-bar-bg"><div class="prob-bar-fill" style="width:12%;background:#8B5CF6;"></div></div>
+        </div>
+        <div style="margin-top:24px;padding-top:20px;border-top:1px solid rgba(255,255,255,.08);">
+          <div style="font-size:.8rem;color:rgba(255,255,255,.4);margin-bottom:12px;">INDIA CLINIC STATS</div>
+          <div style="display:flex;justify-content:space-between;margin-bottom:8px;">
+            <span style="font-size:.82rem;color:rgba(255,255,255,.6);">Registered doctors in India</span>
+            <span style="font-size:.82rem;font-weight:700;color:#fff;">1.2 Million</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;margin-bottom:8px;">
+            <span style="font-size:.82rem;color:rgba(255,255,255,.6);">Using any automation</span>
+            <span style="font-size:.82rem;font-weight:700;color:#EF4444;">&lt;8%</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;">
+            <span style="font-size:.82rem;color:rgba(255,255,255,.6);">Avg calls per clinic per day</span>
+            <span style="font-size:.82rem;font-weight:700;color:#fff;">50–80</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="sec how-sec" id="how">
+  <div class="sec-inner">
+    <div class="sec-tag">How It Works</div>
+    <h2 class="sec-h">From ring to confirmed<br/><em>in under 60 seconds.</em></h2>
+    <p class="sec-sub">Priya, your AI receptionist, handles the entire patient call flow automatically — without any human involvement.</p>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num">01</div>
+        <div class="step-icon">📞</div>
+        <div class="step-t">Patient calls</div>
+        <div class="step-d">Patient calls your existing clinic number — landline or mobile. No new number, no new hardware.</div>
+      </div>
+      <div class="step-card">
+        <div class="step-num">02</div>
+        <div class="step-icon">🤖</div>
+        <div class="step-t">Priya answers</div>
+        <div class="step-d">Priya picks up instantly in Hindi or English, introduces herself and collects the patient's details and reason for visit.</div>
+      </div>
+      <div class="step-card">
+        <div class="step-num">03</div>
+        <div class="step-icon">📅</div>
+        <div class="step-t">Slot confirmed</div>
+        <div class="step-d">Priya checks your live Google Calendar and offers available slots. Patient chooses, appointment is booked instantly.</div>
+      </div>
+      <div class="step-card">
+        <div class="step-num">04</div>
+        <div class="step-icon">💬</div>
+        <div class="step-t">WhatsApp sent</div>
+        <div class="step-d">Patient receives a WhatsApp confirmation with appointment details. A reminder is sent automatically 24 hours before.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="sec feat-sec" id="features">
+  <div class="sec-inner">
+    <div class="sec-tag">Features</div>
+    <h2 class="sec-h">Everything your clinic<br/><em>needs, built in.</em></h2>
+    <p class="sec-sub">Priya is not just an answering machine. She is a fully capable AI receptionist designed specifically for Indian clinics.</p>
+    <div class="feat-grid">
+      <div class="feat-card">
+        <div class="feat-icon">🕐</div>
+        <div class="feat-t">24/7 Availability</div>
+        <div class="feat-d">Priya is always on — at 2 AM, on Sundays, during Diwali. Every call is answered, every time.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">🗣️</div>
+        <div class="feat-t">Hindi + English</div>
+        <div class="feat-d">Priya speaks both languages fluently and switches automatically based on the patient — mid-call if needed.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">📅</div>
+        <div class="feat-t">Live Calendar Sync</div>
+        <div class="feat-d">Syncs directly with your Google Calendar. Only available slots are offered. Zero double bookings.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">💬</div>
+        <div class="feat-t">WhatsApp Confirmations</div>
+        <div class="feat-d">Every booked patient gets an automatic WhatsApp confirmation and a reminder 24 hours before their visit.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">📱</div>
+        <div class="feat-t">Works on Any Number</div>
+        <div class="feat-d">Works on your existing clinic landline or mobile. No app needed for patients — they just call as usual.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">⚡</div>
+        <div class="feat-t">Ready in One Day</div>
+        <div class="feat-d">Setup takes less than a day. No training, no IT team, no disruption to your existing workflow.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ROI CALCULATOR -->
+<section class="sec roi-sec" id="roi">
+  <div class="sec-inner roi-inner">
+    <div class="sec-tag" style="color:#7DD3FC;">ROI Calculator</div>
+    <h2 class="sec-h">How much are missed calls<br/>costing your clinic?</h2>
+    <p class="sec-sub">Move the sliders to see your clinic's numbers.</p>
+    <div class="roi-card">
+      <div class="roi-sliders">
+        <div>
+          <div class="roi-label">Missed calls per day <span id="calls-val">8</span></div>
+          <input type="range" min="1" max="30" value="8" id="calls-slider"/>
+        </div>
+        <div>
+          <div class="roi-label">Avg appointment value <span>&#8377;<span id="value-val">1000</span></span></div>
+          <input type="range" min="300" max="3000" step="100" value="1000" id="value-slider"/>
+        </div>
+      </div>
+      <div class="roi-results">
+        <div class="roi-result">
+          <div class="roi-result-n" id="monthly-lost">&#8377;0</div>
+          <div class="roi-result-l">Lost every month</div>
+        </div>
+        <div class="roi-result">
+          <div class="roi-result-n" id="yearly-lost">&#8377;0</div>
+          <div class="roi-result-l">Lost every year</div>
+        </div>
+        <div class="roi-result">
+          <div class="roi-result-n highlight" id="recovered">&#8377;0</div>
+          <div class="roi-result-l">Recovered with Slotify Care</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPECIALTIES -->
+<section class="sec spec-sec">
+  <div class="sec-inner">
+    <div class="sec-tag">Built For</div>
+    <h2 class="sec-h">Works for every type<br/><em>of clinic.</em></h2>
+    <p class="sec-sub">Priya is trained to handle patient calls across all outpatient specialties — and can be customised for your specific clinic's workflow.</p>
+    <div class="spec-grid">
+      <div class="spec-card"><div class="spec-emoji">👨‍⚕️</div><div><div class="spec-name">General Practitioners</div><div class="spec-desc">Daily OPD, follow-ups, health check-ups</div></div></div>
+      <div class="spec-card"><div class="spec-emoji">🦷</div><div><div class="spec-name">Dental Clinics</div><div class="spec-desc">Cleanings, RCT, orthodontics, implants</div></div></div>
+      <div class="spec-card"><div class="spec-emoji">👶</div><div><div class="spec-name">Paediatricians</div><div class="spec-desc">Vaccinations, growth check-ups, sick visits</div></div></div>
+      <div class="spec-card"><div class="spec-emoji">🧴</div><div><div class="spec-name">Dermatologists</div><div class="spec-desc">Skin consultations, procedures, follow-ups</div></div></div>
+      <div class="spec-card"><div class="spec-emoji">👂</div><div><div class="spec-name">ENT Specialists</div><div class="spec-desc">Ear, nose and throat consultations</div></div></div>
+      <div class="spec-card"><div class="spec-emoji">🏥</div><div><div class="spec-name">All Outpatient Clinics</div><div class="spec-desc">Any clinic with appointment-based visits</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec faq-sec" id="faq">
+  <div class="sec-inner">
+    <div class="sec-tag" style="text-align:center;">FAQ</div>
+    <h2 class="sec-h" style="text-align:center;">Questions doctors<br/><em>always ask us.</em></h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <div class="faq-q-text">Does it work on my existing clinic number?</div>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-a"><p>Yes — Priya works on your existing landline or mobile number. There is no need to change your number, buy new hardware, or ask patients to use a different contact. Everything continues exactly as before, except every call gets answered.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <div class="faq-q-text">What if a patient has an emergency?</div>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-a"><p>Priya is trained to identify emergency language and immediately escalates those calls — either transferring to you directly or providing the nearest emergency contact. Routine bookings are handled autonomously; emergencies are always flagged.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <div class="faq-q-text">Can I customise what Priya says?</div>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-a"><p>Absolutely. Priya's greeting, clinic name, available services, working hours and conversation style are all fully customised for your clinic before go-live. She introduces herself using your clinic's name and follows your specific workflow.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <div class="faq-q-text">What languages does Priya speak?</div>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-a"><p>Currently Hindi and English, with automatic switching mid-call based on the patient's preference. Regional language support for Marathi, Tamil, Telugu and Kannada is on our roadmap.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <div class="faq-q-text">How long does setup take?</div>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-a"><p>Setup is completed within one working day. We handle everything — connecting to your number, configuring Priya for your clinic, syncing your Google Calendar and running a test call with you before going live.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <div class="faq-q-text">Is my patient data secure?</div>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-a"><p>Yes. All patient data is encrypted, stored securely and never shared with third parties. Slotify Care is designed with healthcare data sensitivity in mind. You retain full ownership of all your patient information at all times.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-sec" id="cta">
+  <div class="cta-inner">
+    <h2 class="cta-h">Ready to stop losing<br/><em>patients to missed calls?</em></h2>
+    <p class="cta-p">Leave your WhatsApp number and we'll set up a free 10-minute live demo for your clinic. No commitment, no setup fee.</p>
+    <div class="cta-form">
+      <input class="cta-inp" id="cta-input" type="tel" placeholder="Your WhatsApp number"/>
+      <button class="cta-btn" onclick="handleCta()">Request Demo</button>
+    </div>
+    <div class="cta-success" id="cta-success">&#10003; &nbsp;Got it! Someone from Slotify Care will WhatsApp you shortly to schedule your free demo.</div>
+    <p class="cta-note">No spam. We will WhatsApp you within a few hours. &#128591;</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-inner">
+    <div class="foot-top">
+      <div>
+        <div class="foot-brand-name">
+          <div class="n-logo-icon" style="width:30px;height:30px;border-radius:7px;">
+            <svg width="18" height="18" viewBox="0 0 40 40" fill="none">
+              <rect x="4" y="19" width="2.6" height="7" rx="1.3" fill="white" fill-opacity=".5"/>
+              <rect x="7.5" y="16" width="2.6" height="13" rx="1.3" fill="white" fill-opacity=".65"/>
+              <rect x="11" y="12" width="2.6" height="21" rx="1.3" fill="white" fill-opacity=".8"/>
+              <rect x="14.5" y="9" width="2.6" height="27" rx="1.3" fill="white" fill-opacity=".95"/>
+              <rect x="18" y="7" width="2.6" height="31" rx="1.3" fill="white"/>
+              <rect x="21.5" y="9" width="2.6" height="27" rx="1.3" fill="white" fill-opacity=".95"/>
+              <rect x="25" y="12" width="2.6" height="21" rx="1.3" fill="white" fill-opacity=".8"/>
+              <circle cx="33" cy="31" r="7.5" fill="#0EA5E9"/>
+              <text x="33" y="34.5" text-anchor="middle" font-family="Arial" font-size="6.5" font-weight="bold" fill="white">AI</text>
+            </svg>
+          </div>
+          Slotify Care
+        </div>
+        <p class="foot-brand-desc">AI receptionist for India's doctors and clinics. Your clinic never sleeps.</p>
+        <div class="foot-social">
+          <a class="foot-soc-link" href="https://www.instagram.com/slotifycare/" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+          <a class="foot-soc-link" href="https://www.linkedin.com/company/slotifycare" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <div class="foot-col-h">Product</div>
+        <a href="#how">How It Works</a>
+        <a href="#features">Features</a>
+        
+        <a href="#roi">ROI Calculator</a>
+      </div>
+      <div class="foot-col">
+        <div class="foot-col-h">Specialties</div>
+        <a href="#">General Practitioners</a>
+        <a href="#">Dental Clinics</a>
+        <a href="#">Paediatricians</a>
+        <a href="#">Dermatologists</a>
+        <a href="#">ENT Specialists</a>
+      </div>
+      <div class="foot-col">
+        <div class="foot-col-h">Contact</div>
+        <a href="mailto:slotifycare@gmail.com">slotifycare@gmail.com</a>
+        <a href="tel:+919930566337">+91 99305 66337</a>
+        <a href="#">Mumbai, India</a>
+        <a href="#faq">FAQ</a>
+        <a href="#cta">Request Demo</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div class="foot-copy">&copy; 2025 Slotify Care &middot; AI Receptionist for India's Clinics &amp; Doctors &middot; Mumbai</div>
+      <div class="foot-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a class="wa-float" href="https://wa.me/919930566337?text=Hi%20Arun%2C%20I%20saw%20Slotify%20Care%20and%20would%20like%20to%20know%20more." target="_blank">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+// ── NAV SCROLL
+window.addEventListener('scroll',function(){
+  document.getElementById('nav').classList.toggle('scrolled',scrollY>40);
+},{passive:true});
+
+// ── PHONE ANIMATION
+var msgs=[
+  {r:'ai',t:"Hello! I'm Priya from Smile Care Clinic. May I know your name?"},
+  {r:'u', t:"Hi, I'm Ramesh Shah"},
+  {r:'ai',t:"Good evening Ramesh. What brings you in today?"},
+  {r:'u', t:"Tooth pain on the left side"},
+  {r:'ai',t:"Monday 10 AM or Tuesday 4 PM — which suits you?"},
+  {r:'u', t:"Monday 10am please"},
+  {r:'ok',t:"✓ Confirmed — Ramesh Shah · Mon 10:00 AM · WhatsApp sent"},
+];
+var DELAYS=[800,2000,2000,2000,2000,2000,2000];
+var body=document.getElementById('ph-body');
+function addBbl(m){
+  var d=document.createElement('div');
+  d.className='bbl bbl-'+(m.r==='ok'?'ok':m.r==='ai'?'ai':'u');
+  if(m.r==='ai')d.innerHTML='<div class="bbl-sndr">Priya AI</div>'+m.t;
+  else d.textContent=m.t;
+  body.appendChild(d);
+  body.scrollTop=body.scrollHeight;
+  setTimeout(function(){d.classList.add('show');},30);
+}
+function runMsgs(){
+  body.innerHTML='';
+  var t=0;
+  msgs.forEach(function(m,i){t+=DELAYS[i];setTimeout(function(){addBbl(m);},t);});
+  setTimeout(runMsgs,t+3000);
+}
+runMsgs();
+
+// ── FAQ
+function toggleFaq(el){
+  var item=el.parentElement;
+  var isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(function(i){i.classList.remove('open');});
+  if(!isOpen)item.classList.add('open');
+}
+
+// ── ROI CALCULATOR
+function fmt(n){
+  if(n>=100000)return '&#8377;'+(n/100000).toFixed(1)+'L';
+  if(n>=1000)return '&#8377;'+(n/1000).toFixed(0)+'K';
+  return '&#8377;'+n;
+}
+function updateRoi(){
+  var calls=parseInt(document.getElementById('calls-slider').value);
+  var val=parseInt(document.getElementById('value-slider').value);
+  document.getElementById('calls-val').textContent=calls;
+  document.getElementById('value-val').textContent=val.toLocaleString('en-IN');
+  var monthly=calls*val*26;
+  var yearly=monthly*12;
+  document.getElementById('monthly-lost').innerHTML=fmt(monthly);
+  document.getElementById('yearly-lost').innerHTML=fmt(yearly);
+  document.getElementById('recovered').innerHTML=fmt(Math.round(monthly*0.82));
+}
+document.getElementById('calls-slider').addEventListener('input',updateRoi);
+document.getElementById('value-slider').addEventListener('input',updateRoi);
+updateRoi();
+
+// ── CTA FORM
+var APPS_SCRIPT_URL='https://script.google.com/macros/s/AKfycbwf9lppzaXhEpHxDvUfKiSQV9GXtQecjh0wdeQFu0ZquP7hXl5nOt3_glAD87hSCxS7qA/exec';
+function handleCta(){
+  var val=document.getElementById('cta-input').value.trim();
+  if(!val){document.getElementById('cta-input').focus();return;}
+  var btn=document.querySelector('.cta-btn');
+  btn.disabled=true;btn.textContent='Sending...';
+  var ts=new Date().toLocaleString('en-IN',{timeZone:'Asia/Kolkata'});
+  fetch(APPS_SCRIPT_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify({number:val,timestamp:ts,type:'demo_request_website'})});
+  document.querySelector('.cta-form').style.display='none';
+  document.querySelector('.cta-note').style.display='none';
+  document.getElementById('cta-success').style.display='block';
+  btn.disabled=false;btn.textContent='Request Demo';
+}
+
+// ── SCROLL REVEAL
+var io=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){if(e.isIntersecting)e.target.style.opacity='1';});
+},{threshold:0.08});
+document.querySelectorAll('.prob-card,.feat-card,.case-card,.step-card,.spec-card').forEach(function(el){
+  el.style.opacity='0';el.style.transition='opacity .6s ease';io.observe(el);
+});
+
+// ── ANIMATED BARS
+var barObs=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(e.isIntersecting){
+      e.target.querySelectorAll('.prob-bar-fill').forEach(function(b){
+        b.style.width=b.style.width;
+      });
+    }
+  });
+},{threshold:0.3});
+var probSec=document.querySelector('.problem-sec');
+if(probSec)barObs.observe(probSec);
+</script>
+</body>
+</html>
